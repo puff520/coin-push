@@ -31,7 +31,6 @@ public class PushJob {
     }
 
 
-
     /**
      * 收到变更记录 推送行情到客户端
      *
@@ -42,10 +41,8 @@ public class PushJob {
     }
 
 
-
     /**
      * 收到变更记录 推送行情到客户端
-     *
      */
     @Scheduled(cron = "0/1 * * * * ?")
     public void pushDayDepth() {
@@ -53,6 +50,13 @@ public class PushJob {
     }
 
 
+    /**
+     * 收到变更记录 推送行情到客户端
+     */
+    @Scheduled(cron = "0/1 * * * * ?")
+    public void pushTradeDetail() {
+        simpMessagingTemplate.convertAndSend("/topic/tradeDetail", JSON.toJSONString(MarketDetail.getTradeDetail()));
+    }
 
 
     @Scheduled(cron = "0/1 * * * * ?")

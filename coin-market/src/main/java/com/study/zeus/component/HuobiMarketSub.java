@@ -1,6 +1,9 @@
 package com.study.zeus.component;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.date.DatePattern;
+import cn.hutool.core.date.DateTime;
+import cn.hutool.core.date.format.DateParser;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -20,6 +23,8 @@ import com.huobi.wss.handle.WssMarketHandle;
 import com.study.zeus.entity.*;
 //import com.study.zeus.job.PushJob;
 import com.study.zeus.job.PushJob;
+import com.study.zeus.utils.DateUtil;
+import com.study.zeus.utils.DateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -29,6 +34,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -47,7 +53,6 @@ public class HuobiMarketSub {
     private RedisTemplate redisTemplate;
 
 
-
     MarketClient marketClient = MarketClient.create(new HuobiOptions());
     String symbol = "btcusdt";
 
@@ -59,12 +64,15 @@ public class HuobiMarketSub {
     WssMarketHandle wssMarketKlineHandle = new WssMarketHandle(URL);
     WssMarketHandle wssMarketDepthHandle = new WssMarketHandle(URL);
 
+    WssMarketHandle wssMarketTradeHandle = new WssMarketHandle(URL);
+
 
     @PostConstruct
     private void subTopic() {
         executor.submit(new HandleDetailThread());
         executor.submit(new HandleKlineThread());
         executor.submit(new HandleDepthThread());
+        executor.submit(new HandleTradeDetailThread());
     }
 
     public class HandleDetailThread implements Runnable {
@@ -121,7 +129,7 @@ public class HuobiMarketSub {
                 List<Currency> currencyList = getCacheList();
                 List<String> channels = Lists.newArrayList();
                 for (Currency currency : currencyList) {
-                    channels.add("market." + currency.getName() + "-USD.kline.1day");
+                    channels.add("market." + currency.getName() + "-USD.kline.1min");
                 }
                 wssMarketKlineHandle.sub(channels, response -> {
                     JSONObject jsonObject = JSONObject.parseObject(response);
@@ -190,6 +198,40 @@ public class HuobiMarketSub {
         }
     }
 
+
+    public class HandleTradeDetailThread implements Runnable {
+        @Override
+        public void run() {
+            try {
+                List<Currency> currencyList = getCacheList();
+                List<String> channels = Lists.newArrayList();
+                for (Currency currency : currencyList) {
+                    channels.add("market." + currency.getName() + "-USD.trade.detail");
+                }
+                wssMarketTradeHandle.sub(channels, response -> {
+                    JSONObject jsonObject = JSONObject.parseObject(response);
+                    String ch = jsonObject.getString("ch");
+                    int pri = ch.indexOf("market.") + 7;
+                    int fix = ch.indexOf("-USD.trade.");
+                    String symbol = ch.substring(pri, fix);
+                    JSONObject tickObject = jsonObject.getJSONObject("tick");
+                    TradeDetail tradeDetail = new TradeDetail();
+                    JSONArray jsonArray = tickObject.getJSONArray("data");
+                    for (Object data : jsonArray) {
+                       JSONObject object = (JSONObject) data;
+                        object.put("time", DateUtils.timeToString(new Date()));
+                    }
+                    tradeDetail.setData(jsonArray);
+                    List<Currency> collect = currencyList.stream().filter(s -> s.getName().equals(symbol)).collect(Collectors.toList());
+                    tradeDetail.setCurrency_id(collect.get(0).getId());
+                    MarketDetail.setTradeDetail(tradeDetail);
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public List<Currency> getCacheList() {
         String listValue = (String) redisTemplate.opsForValue().get("currency");
         List<Currency> currencyList = JSONArray.parseArray(listValue, Currency.class);
@@ -198,8 +240,6 @@ public class HuobiMarketSub {
         }
         return new LinkedList<>();
     }
-
-
 
 
 

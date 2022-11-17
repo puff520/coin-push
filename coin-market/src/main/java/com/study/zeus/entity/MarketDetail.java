@@ -16,6 +16,9 @@ public class MarketDetail {
     private static Kline kline;
     @ApiModelProperty("行情深度")
     private static MarketDepth market_depth;
+
+    @ApiModelProperty("交易详情")
+    private static TradeDetail tradeDetail;
     @ApiModelProperty("杠杆交易")
     private static LeverTrade lever_trade;
     @ApiModelProperty("关闭数据")
@@ -32,6 +35,10 @@ public class MarketDetail {
 
     public static void setMarket_depth(MarketDepth market_depth) {
         MarketDetail.market_depth = market_depth;
+    }
+
+    public static void setTradeDetail(TradeDetail tradeDetail) {
+        MarketDetail.tradeDetail = tradeDetail;
     }
 
     public static void setLever_trade(LeverTrade lever_trade) {
@@ -61,5 +68,9 @@ public class MarketDetail {
 
     public static ClosedMicroorder getClosed_microorder() {
         return closed_microorder;
+    }
+
+    public static TradeDetail getTradeDetail() {
+        return tradeDetail;
     }
 }
