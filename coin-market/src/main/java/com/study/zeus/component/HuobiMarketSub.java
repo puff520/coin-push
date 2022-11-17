@@ -183,7 +183,6 @@ public class HuobiMarketSub {
                     List<Currency> collect = currencyList.stream().filter(s -> s.getName().equals(symbol)).collect(Collectors.toList());
                     marketDepth.setCurrency_id(collect.get(0).getId());
                     MarketDetail.setMarket_depth(marketDepth);
-                    pushJob.pushDayDepth(marketDepth);
                 });
             } catch (Exception e) {
                 e.printStackTrace();

@@ -23,7 +23,7 @@
       stompClient.connect({}, function (frame) {
         setConnected(true);
         console.log('Connected: ' + frame);
-        stompClient.subscribe('/topic/dayMarket', function (response) {
+        stompClient.subscribe('/topic/marketDepth', function (response) {
           var responseData = document.getElementById('responseData');
           var p = document.createElement('p');
           p.style.wordWrap = 'break-word';

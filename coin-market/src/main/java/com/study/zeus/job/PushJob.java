@@ -46,10 +46,10 @@ public class PushJob {
     /**
      * 收到变更记录 推送行情到客户端
      *
-     * @param marketDepth
      */
-    public void pushDayDepth(MarketDepth marketDepth) {
-        simpMessagingTemplate.convertAndSend("/topic/marketDepth", JSON.toJSONString(marketDepth));
+    @Scheduled(cron = "0/1 * * * * ?")
+    public void pushDayDepth() {
+        simpMessagingTemplate.convertAndSend("/topic/marketDepth", JSON.toJSONString(MarketDetail.getDayMarket()));
     }
 
 
