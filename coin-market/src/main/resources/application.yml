@@ -2,8 +2,8 @@ server:
   port: 8086
 spring:
   application:
-    name: coin-market
+    name: coin-push
   main:
     allow-bean-definition -overriding: true
   profiles:
-    active: dev
+    active: test

@@ -47,7 +47,12 @@ import java.util.stream.Collectors;
 @Component
 public class HuobiMarketSub {
 
-    private ExecutorService executor = new ThreadPoolExecutor(30, 100, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(1024), new ThreadPoolExecutor.AbortPolicy());
+    private ExecutorService executor = new ThreadPoolExecutor(30,
+            100,
+            0L,
+            TimeUnit.MILLISECONDS,
+            new LinkedBlockingQueue<>(1024),
+            new ThreadPoolExecutor.AbortPolicy());
 
     @Autowired
     private RedisTemplate redisTemplate;

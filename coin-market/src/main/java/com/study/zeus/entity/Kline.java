@@ -35,8 +35,9 @@ public class Kline {
 
 
     public BigDecimal getChange() {
-        BigDecimal addNum = close.subtract(open);
-        BigDecimal change = addNum.multiply(new BigDecimal(100)).setScale(2,BigDecimal.ROUND_DOWN);
+        Double increase = close.subtract(open).doubleValue();
+        Double perRate = increase/(open.doubleValue());
+        BigDecimal change = new BigDecimal(perRate*100).setScale(3,BigDecimal.ROUND_HALF_UP);
         return change;
     }
 

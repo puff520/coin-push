@@ -38,8 +38,9 @@ public class DayMarket {
 
 
     public BigDecimal getChange() {
-        BigDecimal addNum = now_price.subtract(open);
-        BigDecimal change = addNum.multiply(new BigDecimal(100)).setScale(2,BigDecimal.ROUND_DOWN);
+        Double increase = now_price.subtract(open).doubleValue();
+        Double perRate = increase/(open.doubleValue());
+        BigDecimal change = new BigDecimal(perRate*100).setScale(3,BigDecimal.ROUND_HALF_UP);
         return change;
     }
 }
