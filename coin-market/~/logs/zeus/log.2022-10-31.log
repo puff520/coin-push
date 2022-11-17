@@ -1,0 +1,31 @@
+2022-10-31 12:27:02.755  WARN 16304 --- [nioEventLoopGroup-9-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:247)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1147)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-10-31 12:27:02.757 ERROR 16304 --- [nioEventLoopGroup-9-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [远程主机强迫关闭了一个现有的连接。]
+2022-10-31 12:27:02.759 ERROR 16304 --- [nioEventLoopGroup-9-1] com.study.zeus.huobi.HuobiHandler        : 火币客户端断开连接: [false]
+2022-10-31 12:27:02.760  INFO 16304 --- [nioEventLoopGroup-9-1] com.study.zeus.huobi.HuobiClient         : 火币客户端开始重连,当前时间:[2022-10-31 12:27:02]
+2022-10-31 12:27:02.790 ERROR 16304 --- [nioEventLoopGroup-9-1] com.study.zeus.huobi.HuobiClient         : 火币客户端启动出错: [api.huobi.pro]
+2022-10-31 12:27:03.998  INFO 16304 --- [nioEventLoopGroup-9-1] com.study.zeus.huobi.HuobiHandler        : 重连结果: [false]
+2022-10-31 12:52:55.003  INFO 16304 --- [scheduling-1] com.study.zeus.huobi.HuobiComponent      : 重新订阅
+2022-10-31 12:52:55.272  INFO 16304 --- [Thread-18] com.study.zeus.task.CurrencyRateTask     : 写入汇率: [usdCny] ---- [7.228]
+2022-10-31 12:56:31.032  INFO 16304 --- [SpringApplicationShutdownHook] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:135}] to localhost:27017 because the pool has been closed.
+2022-10-31 12:56:31.032  INFO 16304 --- [SpringApplicationShutdownHook] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:4, serverValue:136}] to localhost:27017 because the pool has been closed.
+2022-10-31 12:56:31.032  INFO 16304 --- [SpringApplicationShutdownHook] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:5, serverValue:137}] to localhost:27017 because the pool has been closed.

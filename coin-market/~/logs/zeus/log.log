@@ -1,0 +1,734 @@
+2022-11-15 20:19:33.278  INFO 21188 --- [main] com.study.zeus.ZeusApplication           : Starting ZeusApplication using Java 19 on DESKTOP-JD511AF with PID 21188 (C:\Users\Administrator\Desktop\zeus-master\target\classes started by Administrator in C:\Users\Administrator\Desktop\zeus-master)
+2022-11-15 20:19:33.282  INFO 21188 --- [main] com.study.zeus.ZeusApplication           : No active profile set, falling back to default profiles: default
+2022-11-15 20:19:33.720  INFO 21188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-15 20:19:33.721  INFO 21188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-15 20:19:33.749  INFO 21188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 MongoDB repository interfaces.
+2022-11-15 20:19:33.871  INFO 21188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-11-15 20:19:33.872  INFO 21188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-11-15 20:19:33.894  INFO 21188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2022-11-15 20:19:34.251  INFO 21188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8086 (http)
+2022-11-15 20:19:34.259  INFO 21188 --- [main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8086"]
+2022-11-15 20:19:34.260  INFO 21188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-15 20:19:34.260  INFO 21188 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2022-11-15 20:19:34.345  INFO 21188 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-15 20:19:34.345  INFO 21188 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1014 ms
+2022-11-15 20:19:34.475  INFO 21188 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-11-15 20:19:34.650  INFO 21188 --- [cluster-ClusterId{value='637383d66e455770e0bd5755', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2022-11-15 20:19:34.650  INFO 21188 --- [cluster-rtt-ClusterId{value='637383d66e455770e0bd5755', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:2}] to localhost:27017
+2022-11-15 20:19:34.650  INFO 21188 --- [cluster-ClusterId{value='637383d66e455770e0bd5755', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=126104400}
+2022-11-15 20:19:35.876  INFO 21188 --- [main] c.s.zeus.core.AbstractWebsocketClient    : 行情基类启动成功,时间:[2022-11-15 08:19:35]
+2022-11-15 20:19:36.252  INFO 21188 --- [main] c.s.zeus.core.AbstractWebsocketServer    : 服务端启动成功,端口:[8085],连接方式: [ws://ip:port/]
+2022-11-15 20:19:36.313  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.detail","ts":1668514774779}]
+2022-11-15 20:19:36.313  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.detail","ts":1668514774430,"tick":{"id":321937991462,"low":16193.65,"high":17188.0,"open":16691.02,"close":16821.1,"vol":5.429117323997552E7,"amount":3256.031678006215,"version":321937991462,"count":115426}}]
+2022-11-15 20:19:36.571  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.depth.step1","ts":1668514774780}]
+2022-11-15 20:19:36.571  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.depth.step1","ts":1668514774680,"tick":{"bids":[[16821.0,0.2],[16820.8,0.02],[16820.5,0.08],[16818.6,0.02],[16818.5,0.08],[16816.4,0.048429],[16815.0,0.034518],[16812.8,0.020663],[16807.9,1.142849],[16807.7,0.04411],[16807.2,4.91E-4],[16806.4,0.070037],[16805.2,0.01663],[16804.7,0.2],[16804.3,5.0E-4],[16803.5,0.00462],[16802.4,0.2],[16800.8,0.0205],[16798.8,0.013375],[16797.6,0.0205]],"asks":[[16821.1,0.015671],[16821.7,0.012525],[16822.5,0.002666],[16823.8,13.723383],[16824.2,2.6929603010184917],[16826.0,0.04984],[16826.1,0.08],[16826.2,0.08],[16826.4,0.01],[16826.7,0.02],[16826.8,0.04],[16829.4,0.244471],[16830.3,5.36636],[16830.7,0.001128],[16831.7,0.060448],[16831.8,0.030708],[16832.0,0.036605],[16832.7,0.014739],[16832.9,0.028776],[16833.0,0.128022]],"version":160978358321,"ts":1668514774003}}]
+2022-11-15 20:19:36.574  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.trade.detail","ts":1668514774781}]
+2022-11-15 20:19:36.574  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.trade.detail","ts":1668514774429,"tick":{"id":160978358401,"ts":1668514774428,"data":[{"id":160978358401671728441176302,"ts":1668514774428,"tradeId":102748732597,"amount":0.005886,"price":16821.1,"direction":"buy"}]}}]
+2022-11-15 20:19:36.574  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.kline.1min","ts":1668514774781}]
+2022-11-15 20:19:36.574  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.kline.1min","ts":1668514774429,"tick":{"id":1668514740,"open":16815.42,"close":16821.1,"low":16815.0,"high":16821.1,"amount":0.2561403217084948,"vol":4307.21759801,"count":20}}]
+2022-11-15 20:19:36.579  INFO 21188 --- [main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8086"]
+2022-11-15 20:19:36.588  INFO 21188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8086 (http) with context path ''
+2022-11-15 20:19:36.597  INFO 21188 --- [main] com.study.zeus.ZeusApplication           : Started ZeusApplication in 3.662 seconds (JVM running for 6.411)
+2022-11-15 20:19:36.617  INFO 21188 --- [nioEventLoopGroup-4-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:3}] to localhost:27017
+2022-11-15 20:19:36.709  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.kline.5min","ts":1668514774781}]
+2022-11-15 20:19:36.710  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.kline.5min","ts":1668514774429,"tick":{"id":1668514500,"open":16821.87,"close":16821.1,"low":16807.75,"high":16824.15,"amount":4.3429676357251825,"vol":73034.83768721974,"count":250}}]
+2022-11-15 20:19:36.715  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.kline.15min","ts":1668514774782}]
+2022-11-15 20:19:36.715  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.kline.15min","ts":1668514774429,"tick":{"id":1668514500,"open":16821.87,"close":16821.1,"low":16807.75,"high":16824.15,"amount":4.3429676357251825,"vol":73034.83768721974,"count":250}}]
+2022-11-15 20:19:36.718  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.kline.30min","ts":1668514774782}]
+2022-11-15 20:19:36.719  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.kline.30min","ts":1668514774429,"tick":{"id":1668513600,"open":16781.16,"close":16821.1,"low":16726.53,"high":16841.44,"amount":37.56925215577063,"vol":630177.8238242817,"count":1440}}]
+2022-11-15 20:19:36.721  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.kline.60min","ts":1668514774782}]
+2022-11-15 20:19:36.722  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.kline.60min","ts":1668514774429,"tick":{"id":1668513600,"open":16781.16,"close":16821.1,"low":16726.53,"high":16841.44,"amount":37.56925215577063,"vol":630177.8238242817,"count":1440}}]
+2022-11-15 20:19:36.725  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.kline.1day","ts":1668514774782}]
+2022-11-15 20:19:36.725  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.kline.1day","ts":1668514774429,"tick":{"id":1668441600,"open":16593.79,"close":16821.1,"low":16193.65,"high":16983.29,"amount":2135.929289395367,"vol":3.553547173850522E7,"count":79199}}]
+2022-11-15 20:19:36.727  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.kline.1mon","ts":1668514774782}]
+2022-11-15 20:19:36.727  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.kline.1mon","ts":1668514774429,"tick":{"id":1667232000,"open":20399.99,"close":16821.1,"low":15574.45,"high":21473.0,"amount":155976.5224973205,"vol":2.8949642607013416E9,"count":2976349}}]
+2022-11-15 20:19:36.729  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.kline.1week","ts":1668514774783}]
+2022-11-15 20:19:36.729  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.kline.1week","ts":1668514774429,"tick":{"id":1668268800,"open":16931.83,"close":16821.1,"low":15820.01,"high":17188.0,"amount":8638.005378088641,"vol":1.4363129543479168E8,"count":320009}}]
+2022-11-15 20:19:36.732  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.btcusdt.kline.1year","ts":1668514774783}]
+2022-11-15 20:19:36.732  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.btcusdt.kline.1year","ts":1668514774429,"tick":{"id":1640966400,"open":47997.69,"close":16821.1,"low":15574.45,"high":48200.77,"amount":3778934.7539735674,"vol":1.1208995241980553E11,"count":153869026}}]
+2022-11-15 20:19:36.774  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.detail","ts":1668514774783}]
+2022-11-15 20:19:36.774  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.detail","ts":1668514774429,"tick":{"id":306609146307,"low":1210.35,"high":1300.0,"open":1253.25,"close":1264.37,"vol":4.15797780609456E7,"amount":33193.37466490811,"version":306609146307,"count":80860}}]
+2022-11-15 20:19:36.776  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.depth.step1","ts":1668514774783}]
+2022-11-15 20:19:36.777  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.depth.step1","ts":1668514774213,"tick":{"bids":[[1264.1,0.4],[1263.8,1.1],[1263.5,35.3431],[1262.9,73.791],[1262.8,0.2],[1262.6,2.02],[1262.5,12.4],[1262.3,1.7],[1262.2,100.5776],[1262.0,10.0],[1261.9,18.7507],[1261.7,0.004],[1261.6,0.1816],[1261.5,10.0],[1261.3,2.1217],[1261.2,182.6796],[1261.1,15.95],[1261.0,2.0],[1260.9,10.0],[1260.6,2.7594]],"asks":[[1264.4,0.6735],[1264.6,2.6104],[1264.8,1.0085],[1265.0,34.3218],[1265.1,2.5],[1265.3,5.0],[1265.4,0.0354],[1265.5,74.4654],[1265.6,2.0],[1265.7,6.5],[1265.9,6.9374],[1266.0,12.8993],[1266.4,0.025],[1266.5,5.0],[1266.8,110.5776],[1267.0,5.0],[1267.2,30.8265],[1267.4,22.1596],[1267.5,176.3112],[1267.8,0.0349]],"version":153310338324,"ts":1668514774002}}]
+2022-11-15 20:19:36.778  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.trade.detail","ts":1668514774784}]
+2022-11-15 20:19:36.778  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.trade.detail","ts":1668514774429,"tick":{"id":153310338347,"ts":1668514774428,"data":[{"id":153310338347671728491761950,"ts":1668514774428,"tradeId":102434665113,"amount":0.0245,"price":1264.37,"direction":"buy"}]}}]
+2022-11-15 20:19:36.778  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.kline.1min","ts":1668514774784}]
+2022-11-15 20:19:36.778  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.kline.1min","ts":1668514774429,"tick":{"id":1668514740,"open":1263.56,"close":1264.37,"low":1263.56,"high":1264.37,"amount":0.6638,"vol":839.233469,"count":8}}]
+2022-11-15 20:19:36.782  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.kline.5min","ts":1668514774784}]
+2022-11-15 20:19:36.782  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.kline.5min","ts":1668514774429,"tick":{"id":1668514500,"open":1264.22,"close":1264.37,"low":1262.5,"high":1265.1,"amount":48.72529212200431,"vol":61578.32656519,"count":160}}]
+2022-11-15 20:19:36.785  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.kline.15min","ts":1668514774785}]
+2022-11-15 20:19:36.785  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.kline.15min","ts":1668514774429,"tick":{"id":1668514500,"open":1264.22,"close":1264.37,"low":1262.5,"high":1265.1,"amount":48.72529212200431,"vol":61578.32656519,"count":160}}]
+2022-11-15 20:19:36.788  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.kline.30min","ts":1668514774785}]
+2022-11-15 20:19:36.788  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.kline.30min","ts":1668514774429,"tick":{"id":1668513600,"open":1260.16,"close":1264.37,"low":1258.0,"high":1265.99,"amount":246.58463341152668,"vol":311266.72009009,"count":680}}]
+2022-11-15 20:19:36.791  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.kline.60min","ts":1668514774785}]
+2022-11-15 20:19:36.791  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.kline.60min","ts":1668514774429,"tick":{"id":1668513600,"open":1260.16,"close":1264.37,"low":1258.0,"high":1265.99,"amount":246.58463341152668,"vol":311266.72009009,"count":680}}]
+2022-11-15 20:19:36.794  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.kline.1day","ts":1668514774786}]
+2022-11-15 20:19:36.795  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.kline.1day","ts":1668514774429,"tick":{"id":1668441600,"open":1245.41,"close":1264.37,"low":1210.35,"high":1279.0,"amount":19696.638866799563,"vol":2.4553471689654846E7,"count":55621}}]
+2022-11-15 20:19:36.797  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.kline.1mon","ts":1668514774786}]
+2022-11-15 20:19:36.798  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.kline.1mon","ts":1668514774429,"tick":{"id":1667232000,"open":1568.96,"close":1264.37,"low":1073.41,"high":1676.52,"amount":1214902.9300569552,"vol":1.6950110267136846E9,"count":2469583}}]
+2022-11-15 20:19:36.801  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.kline.1week","ts":1668514774786}]
+2022-11-15 20:19:36.801  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.kline.1week","ts":1668514774429,"tick":{"id":1668268800,"open":1275.01,"close":1264.37,"low":1171.53,"high":1300.0,"amount":79836.24366541079,"vol":9.927166925493503E7,"count":193445}}]
+2022-11-15 20:19:36.804  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ethusdt.kline.1year","ts":1668514774786}]
+2022-11-15 20:19:36.804  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.kline.1year","ts":1668514774429,"tick":{"id":1640966400,"open":3785.61,"close":1264.37,"low":881.36,"high":3894.21,"amount":3.508527136984059E7,"vol":6.994647602662343E10,"count":87480451}}]
+2022-11-15 20:19:36.809  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.detail","ts":1668514774787}]
+2022-11-15 20:19:36.809  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.detail","ts":1668514753877,"tick":{"id":227231151889,"low":54.9,"high":59.24,"open":57.43,"close":58.47,"vol":3189002.5932079307,"amount":55793.44383898851,"version":227231151889,"count":14585}}]
+2022-11-15 20:19:36.820  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.depth.step1","ts":1668514774787}]
+2022-11-15 20:19:36.821  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.depth.step1","ts":1668514773861,"tick":{"bids":[[58.4,89.1646],[58.3,671.9775],[58.2,1151.6921],[58.1,762.5291],[58.0,449.5416],[57.9,0.3574],[57.8,301.4066],[57.7,1505.18],[57.6,397.852],[57.5,1.1357],[57.4,31.114],[57.3,215.7009],[57.2,19.1239],[57.1,82.531],[57.0,3.5698],[56.9,17.9042],[56.8,0.4236],[56.7,18.9165],[56.6,6.3426],[56.5,2.18]],"asks":[[58.5,153.5929],[58.6,553.5468],[58.7,1281.2701],[58.8,753.856],[58.9,525.3252],[59.0,17.4899],[59.1,38.9051],[59.2,299.3239],[59.3,3.5905],[59.4,5.7512],[59.5,89.1768],[59.6,162.6828],[59.7,36.9054],[59.8,4.4723],[59.9,3.7515],[60.0,82.9924],[60.1,90.2233],[60.2,3.1325],[60.3,80.8847],[60.4,76.7208]],"version":113616917219,"ts":1668514773729}}]
+2022-11-15 20:19:36.821  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.trade.detail","ts":1668514774787}]
+2022-11-15 20:19:36.821  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.trade.detail","ts":1668514753878,"tick":{"id":113616917091,"ts":1668514753876,"data":[{"id":113616917091671728475059988,"ts":1668514753876,"tradeId":101548736308,"amount":9.1892,"price":58.47,"direction":"sell"},{"id":113616917091671728449127352,"ts":1668514753876,"tradeId":101548736307,"amount":4.4808,"price":58.47,"direction":"sell"}]}}]
+2022-11-15 20:19:36.822  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.kline.1min","ts":1668514774787}]
+2022-11-15 20:19:36.822  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.kline.1min","ts":1668514753877,"tick":{"id":1668514740,"open":58.47,"close":58.47,"low":58.47,"high":58.47,"amount":1.5192,"vol":88.827624,"count":2}}]
+2022-11-15 20:19:36.825  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.kline.5min","ts":1668514774787}]
+2022-11-15 20:19:36.825  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.kline.5min","ts":1668514753877,"tick":{"id":1668514500,"open":58.39,"close":58.47,"low":58.39,"high":58.47,"amount":196.6142707735752,"vol":11489.1705303,"count":38}}]
+2022-11-15 20:19:36.828  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.kline.15min","ts":1668514774788}]
+2022-11-15 20:19:36.829  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.kline.15min","ts":1668514753877,"tick":{"id":1668514500,"open":58.39,"close":58.47,"low":58.39,"high":58.47,"amount":196.6142707735752,"vol":11489.1705303,"count":38}}]
+2022-11-15 20:19:36.832  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.kline.30min","ts":1668514774788}]
+2022-11-15 20:19:36.832  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.kline.30min","ts":1668514753877,"tick":{"id":1668513600,"open":58.21,"close":58.47,"low":58.17,"high":58.5,"amount":639.0756902269903,"vol":37289.54981174,"count":129}}]
+2022-11-15 20:19:36.835  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.kline.60min","ts":1668514774788}]
+2022-11-15 20:19:36.835  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.kline.60min","ts":1668514753877,"tick":{"id":1668513600,"open":58.21,"close":58.47,"low":58.17,"high":58.5,"amount":639.0756902269903,"vol":37289.54981174,"count":129}}]
+2022-11-15 20:19:36.838  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.kline.1day","ts":1668514774788}]
+2022-11-15 20:19:36.838  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.kline.1day","ts":1668514753877,"tick":{"id":1668441600,"open":56.9,"close":58.47,"low":54.9,"high":58.97,"amount":40171.096635366644,"vol":2288143.14325491,"count":9992}}]
+2022-11-15 20:19:36.841  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.kline.1mon","ts":1668514774789}]
+2022-11-15 20:19:36.841  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.kline.1mon","ts":1668514753877,"tick":{"id":1667232000,"open":54.44,"close":58.47,"low":47.58,"high":73.28,"amount":2601396.859563634,"vol":1.6063276036482984E8,"count":800806}}]
+2022-11-15 20:19:36.845  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.kline.1week","ts":1668514774789}]
+2022-11-15 20:19:36.845  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.kline.1week","ts":1668514753877,"tick":{"id":1668268800,"open":59.98,"close":58.47,"low":53.54,"high":61.0,"amount":189883.53145604837,"vol":1.0949197551603174E7,"count":49499}}]
+2022-11-15 20:19:36.848  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.ltcusdt.kline.1year","ts":1668514774789}]
+2022-11-15 20:19:36.848  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.kline.1year","ts":1668514753877,"tick":{"id":1640966400,"open":150.4,"close":58.47,"low":40.38,"high":153.8,"amount":3.1336309955480386E7,"vol":2.6513606368025227E9,"count":11761991}}]
+2022-11-15 20:19:36.852  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.detail","ts":1668514774789}]
+2022-11-15 20:19:36.852  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.detail","ts":1668514747652,"tick":{"id":240196362463,"low":19.7,"high":20.7466,"open":20.0866,"close":20.5458,"vol":2338579.25184687,"amount":115456.01094223144,"version":240196362463,"count":19393}}]
+2022-11-15 20:19:36.855  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.depth.step1","ts":1668514774789}]
+2022-11-15 20:19:36.855  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.depth.step1","ts":1668514773813,"tick":{"bids":[[20.546,10.4014],[20.543,181.1169],[20.542,1.9],[20.541,0.95],[20.532,9.6],[20.528,20.0],[20.527,122.9139],[20.522,529.2],[20.52,1.6],[20.517,1.8],[20.51,256.816],[20.509,1.8],[20.5,292.68],[20.496,515.525],[20.474,1988.1738],[20.466,48.6429],[20.46,51.5765],[20.455,48.6851],[20.454,1.57],[20.453,4.0]],"asks":[[20.555,3.8],[20.557,8.05],[20.558,0.72],[20.564,133.5183],[20.569,253.216],[20.575,14.581],[20.577,291.599],[20.588,1719.0828],[20.593,20.0],[20.595,512.9446],[20.597,500.0],[20.609,0.0786],[20.616,48.6829],[20.618,0.1646],[20.63,24.8729],[20.631,1979.4583],[20.64,51.8203],[20.649,0.0977],[20.659,796.6581],[20.661,4.0622]],"version":120103424884,"ts":1668514773233}}]
+2022-11-15 20:19:36.856  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.trade.detail","ts":1668514774790}]
+2022-11-15 20:19:36.856  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.trade.detail","ts":1668514747661,"tick":{"id":120103422820,"ts":1668514747659,"data":[{"id":120103422820671728474587472,"ts":1668514747659,"tradeId":100872582221,"amount":10.2501,"price":20.5458,"direction":"sell"}]}}]
+2022-11-15 20:19:36.856  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.kline.1min","ts":1668514774790}]
+2022-11-15 20:19:36.856  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.kline.1min","ts":1668514747651,"tick":{"id":1668514740,"open":20.5458,"close":20.5458,"low":20.5458,"high":20.5458,"amount":3.5153,"vol":72.22465074,"count":1}}]
+2022-11-15 20:19:36.860  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.kline.5min","ts":1668514774790}]
+2022-11-15 20:19:36.860  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.kline.5min","ts":1668514747651,"tick":{"id":1668514500,"open":20.5498,"close":20.5458,"low":20.5273,"high":20.5529,"amount":11.7541,"vol":241.54750037,"count":9}}]
+2022-11-15 20:19:36.863  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.kline.15min","ts":1668514774790}]
+2022-11-15 20:19:36.863  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.kline.15min","ts":1668514747651,"tick":{"id":1668514500,"open":20.5498,"close":20.5458,"low":20.5273,"high":20.5529,"amount":11.7541,"vol":241.54750037,"count":9}}]
+2022-11-15 20:19:36.866  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.kline.30min","ts":1668514774792}]
+2022-11-15 20:19:36.866  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.kline.30min","ts":1668514747651,"tick":{"id":1668513600,"open":20.463,"close":20.5458,"low":20.4332,"high":20.5529,"amount":78.5411,"vol":1608.36177867,"count":76}}]
+2022-11-15 20:19:36.869  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.kline.60min","ts":1668514774792}]
+2022-11-15 20:19:36.869  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.kline.60min","ts":1668514747651,"tick":{"id":1668513600,"open":20.463,"close":20.5458,"low":20.4332,"high":20.5529,"amount":78.5411,"vol":1608.36177867,"count":76}}]
+2022-11-15 20:19:36.872  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.kline.1day","ts":1668514774792}]
+2022-11-15 20:19:36.872  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.kline.1day","ts":1668514747651,"tick":{"id":1668441600,"open":20.0192,"close":20.5458,"low":19.7,"high":20.6551,"amount":89912.29494442801,"vol":1823590.79694559,"count":14656}}]
+2022-11-15 20:19:36.875  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.kline.1mon","ts":1668514774792}]
+2022-11-15 20:19:36.876  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.kline.1mon","ts":1668514747651,"tick":{"id":1667232000,"open":24.1638,"close":20.5458,"low":17.7465,"high":27.2189,"amount":4208985.863741526,"vol":9.835700885852793E7,"count":731080}}]
+2022-11-15 20:19:36.879  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.kline.1week","ts":1668514774792}]
+2022-11-15 20:19:36.879  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.kline.1week","ts":1668514747651,"tick":{"id":1668268800,"open":20.6648,"close":20.5458,"low":18.8274,"high":20.9117,"amount":230797.7423574141,"vol":4642501.17980567,"count":55459}}]
+2022-11-15 20:19:36.882  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.etcusdt.kline.1year","ts":1668514774792}]
+2022-11-15 20:19:36.882  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.kline.1year","ts":1668514747651,"tick":{"id":1640966400,"open":35.2106,"close":20.5458,"low":12.4637,"high":52.671,"amount":9.687854792888793E7,"vol":3.088342791261848E9,"count":16920721}}]
+2022-11-15 20:19:36.885  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.detail","ts":1668514774792}]
+2022-11-15 20:19:36.885  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.detail","ts":1668514740005,"tick":{"id":231374680309,"low":100.26,"high":106.21,"open":102.91,"close":104.59,"vol":525125.6039957,"amount":5094.947403256847,"version":231374680309,"count":5467}}]
+2022-11-15 20:19:36.887  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.depth.step1","ts":1668514774792}]
+2022-11-15 20:19:36.887  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.depth.step1","ts":1668514774506,"tick":{"bids":[[104.5,3.0026],[104.4,83.5091],[104.3,16.7434],[104.2,188.1038],[104.1,16.7056],[104.0,130.6489],[103.9,34.0721],[103.8,70.2351],[103.7,7.2907],[103.6,42.5494],[103.5,2.516],[103.4,3.0097],[103.3,46.9581],[103.1,1.7261],[103.0,8.4041],[102.9,0.675],[102.8,0.252],[102.5,24.2961],[102.2,0.5555],[102.0,0.4839]],"asks":[[104.6,2.0],[104.7,41.7922],[104.8,3.0],[104.9,68.4597],[105.0,196.1074],[105.1,20.6195],[105.2,30.5978],[105.3,32.2323],[105.4,2.2583],[105.5,0.8],[105.6,2.9673],[105.7,1.2538],[105.8,3.103],[105.9,17.9836],[106.0,19.7581],[106.1,1.0143],[106.2,28.6055],[106.3,1.4719],[106.5,1.2148],[106.6,1.4505]],"version":115689158100,"ts":1668514774230}}]
+2022-11-15 20:19:36.887  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.trade.detail","ts":1668514774792}]
+2022-11-15 20:19:36.887  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.trade.detail","ts":1668514717712,"tick":{"id":115689156917,"ts":1668514717711,"data":[{"id":115689156917671728475053290,"ts":1668514717711,"tradeId":101195118573,"amount":0.9482,"price":104.59,"direction":"sell"}]}}]
+2022-11-15 20:19:36.887  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.kline.1min","ts":1668514774792}]
+2022-11-15 20:19:36.888  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.kline.1min","ts":1668514740785,"tick":{"id":1668514740,"open":104.59,"close":104.59,"low":104.59,"high":104.59,"amount":0.0,"vol":0.0,"count":0}}]
+2022-11-15 20:19:36.890  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.kline.5min","ts":1668514774793}]
+2022-11-15 20:19:36.891  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.kline.5min","ts":1668514717712,"tick":{"id":1668514500,"open":104.55,"close":104.59,"low":104.52,"high":104.59,"amount":1.4262,"vol":149.134938,"count":4}}]
+2022-11-15 20:19:36.893  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.kline.15min","ts":1668514774793}]
+2022-11-15 20:19:36.894  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.kline.15min","ts":1668514717712,"tick":{"id":1668514500,"open":104.55,"close":104.59,"low":104.52,"high":104.59,"amount":1.4262,"vol":149.134938,"count":4}}]
+2022-11-15 20:19:36.896  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.kline.30min","ts":1668514774793}]
+2022-11-15 20:19:36.896  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.kline.30min","ts":1668514717712,"tick":{"id":1668513600,"open":104.1,"close":104.59,"low":104.1,"high":104.64,"amount":7.3977,"vol":771.624005,"count":24}}]
+2022-11-15 20:19:36.898  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.kline.60min","ts":1668514774793}]
+2022-11-15 20:19:36.898  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.kline.60min","ts":1668514717712,"tick":{"id":1668513600,"open":104.1,"close":104.59,"low":104.1,"high":104.64,"amount":7.3977,"vol":771.624005,"count":24}}]
+2022-11-15 20:19:36.900  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.kline.1day","ts":1668514774793}]
+2022-11-15 20:19:36.900  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.kline.1day","ts":1668514717712,"tick":{"id":1668441600,"open":101.88,"close":104.59,"low":100.26,"high":106.21,"amount":3239.4823377658117,"vol":334431.3988647,"count":3710}}]
+2022-11-15 20:19:36.902  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.kline.1mon","ts":1668514774793}]
+2022-11-15 20:19:36.902  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.kline.1mon","ts":1668514717712,"tick":{"id":1667232000,"open":114.14,"close":104.59,"low":87.13,"high":126.03,"amount":333156.290561922,"vol":3.57162586185813E7,"count":292089}}]
+2022-11-15 20:19:36.903  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.kline.1week","ts":1668514774794}]
+2022-11-15 20:19:36.903  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.kline.1week","ts":1668514717712,"tick":{"id":1668268800,"open":102.14,"close":104.59,"low":96.21,"high":106.21,"amount":19722.158634528325,"vol":1998963.6671905143,"count":19781}}]
+2022-11-15 20:19:36.905  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.bchusdt.kline.1year","ts":1668514774794}]
+2022-11-15 20:19:36.905  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.bchusdt.kline.1year","ts":1668514717712,"tick":{"id":1640966400,"open":436.08,"close":104.59,"low":87.13,"high":452.42,"amount":6155891.479719367,"vol":1.387123603136406E9,"count":6692709}}]
+2022-11-15 20:19:36.908  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774794,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.910  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:315)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:429)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.911 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.915  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774794,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.915  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:315)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:429)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.916 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.916  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774794,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.916  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:315)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:429)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.917 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.917  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774794,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.917  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:315)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:429)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.918 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.918  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774794,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.918  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:315)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:429)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.919 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.919  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774794,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.919  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:315)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:429)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.919 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.920  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774794,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.920  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:315)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:429)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.920 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.920  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774794,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.920  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:302)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.924 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.925  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.etcusdt.depth.step1","ts":1668514774813,"tick":{"bids":[[20.546,10.4014],[20.543,181.1169],[20.542,1.9],[20.541,0.95],[20.532,5.6],[20.528,20.0],[20.527,126.9139],[20.522,529.2],[20.52,1.6],[20.517,1.8],[20.51,256.816],[20.509,1.8],[20.5,292.68],[20.496,515.525],[20.474,1988.1738],[20.466,48.6429],[20.46,51.5765],[20.455,48.6851],[20.454,1.57],[20.453,4.0]],"asks":[[20.555,3.8],[20.557,8.05],[20.558,0.72],[20.564,133.5183],[20.569,253.216],[20.575,14.581],[20.577,291.599],[20.588,1719.0828],[20.593,20.0],[20.595,512.9446],[20.597,500.0],[20.609,0.0786],[20.616,48.6829],[20.618,0.1646],[20.63,24.8729],[20.631,1979.4583],[20.64,51.8203],[20.649,0.0977],[20.659,796.6581],[20.661,4.0622]],"version":120103424888,"ts":1668514774675}}]
+2022-11-15 20:19:36.925  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774860,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.926  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:315)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:429)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.926 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.926  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774860,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.926  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:315)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:429)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.927 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.927  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774860,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.927  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:315)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:429)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.927 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.927  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"status":"error","ts":1668514774860,"id":"502dbded-bd64-4329-aca3-292af90bb17d","err-code":"bad-request","err-msg":"invalid symbol dashusdt"}]
+2022-11-15 20:19:36.927  WARN 21188 --- [nioEventLoopGroup-4-1] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null
+	at com.study.zeus.huobi.service.HuobiServiceImpl.onReceive(HuobiServiceImpl.java:57)
+	at com.study.zeus.huobi.HuobiClient.onReceiveMsg(HuobiClient.java:111)
+	at com.study.zeus.huobi.HuobiHandler.channelRead0(HuobiHandler.java:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:328)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:315)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:429)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1475)
+	at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1224)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1271)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:505)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:444)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:283)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2022-11-15 20:19:36.928 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 异常信息: [Cannot invoke "String.contains(java.lang.CharSequence)" because "ch" is null]
+2022-11-15 20:19:36.928  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.detail","ts":1668514774860}]
+2022-11-15 20:19:36.928  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.detail","ts":1668514746442,"tick":{"id":233472468550,"low":0.8885,"high":0.9301,"open":0.909,"close":0.9263,"vol":560041.6617956461,"amount":615004.6991868136,"version":233472468550,"count":5641}}]
+2022-11-15 20:19:36.931  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.depth.step1","ts":1668514774860}]
+2022-11-15 20:19:36.931  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.depth.step1","ts":1668514774778,"tick":{"bids":[[0.926,3480.1446],[0.925,5118.84],[0.924,23648.083],[0.923,24958.2711],[0.921,15484.3363],[0.92,9122.1637],[0.918,5938.53],[0.912,3128.2762],[0.91,1.444],[0.908,435.2391],[0.907,8.4515],[0.904,1.8148],[0.903,1542.09],[0.9,2037.5837],[0.897,5.5711],[0.896,8.4515],[0.893,1497.1186],[0.889,4.0822],[0.887,1.8148],[0.886,8.4515]],"asks":[[0.927,2.1605],[0.928,939.7763],[0.929,38232.4163],[0.93,9935.9724],[0.931,30450.4827],[0.932,15066.0028],[0.933,8271.027],[0.934,122.6182],[0.935,92.1336],[0.936,88.5386],[0.937,1.8111],[0.938,86.3837],[0.939,109.8621],[0.94,151.8568],[0.941,86.0585],[0.942,1.4411],[0.943,6.3633],[0.944,85.7724],[0.945,12.9687],[0.949,47.4182]],"version":116737963145,"ts":1668514773753}}]
+2022-11-15 20:19:36.931  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.trade.detail","ts":1668514774860}]
+2022-11-15 20:19:36.932  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.trade.detail","ts":1668514746441,"tick":{"id":116737962721,"ts":1668514746439,"data":[{"id":116737962721671728457416925,"ts":1668514746439,"tradeId":101921712759,"amount":342.0702,"price":0.9263,"direction":"sell"},{"id":116737962721671728440882524,"ts":1668514746439,"tradeId":101921712758,"amount":153.8502,"price":0.9264,"direction":"sell"}]}}]
+2022-11-15 20:19:36.932  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.kline.1min","ts":1668514774860}]
+2022-11-15 20:19:36.932  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.kline.1min","ts":1668514746441,"tick":{"id":1668514740,"open":0.9264,"close":0.9263,"low":0.9263,"high":0.9264,"amount":495.9204,"vol":459.38645154,"count":2}}]
+2022-11-15 20:19:36.935  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.kline.5min","ts":1668514774860}]
+2022-11-15 20:19:36.935  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.kline.5min","ts":1668514746441,"tick":{"id":1668514500,"open":0.9275,"close":0.9263,"low":0.9263,"high":0.9275,"amount":1336.1197,"vol":1237.94016904,"count":15}}]
+2022-11-15 20:19:36.936  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.kline.15min","ts":1668514774860}]
+2022-11-15 20:19:36.937  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.kline.15min","ts":1668514746441,"tick":{"id":1668514500,"open":0.9275,"close":0.9263,"low":0.9263,"high":0.9275,"amount":1336.1197,"vol":1237.94016904,"count":15}}]
+2022-11-15 20:19:36.940  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.kline.30min","ts":1668514774860}]
+2022-11-15 20:19:36.940  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.kline.30min","ts":1668514746441,"tick":{"id":1668513600,"open":0.9271,"close":0.9263,"low":0.9253,"high":0.928,"amount":35381.9917,"vol":32764.81368014,"count":97}}]
+2022-11-15 20:19:36.942  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.kline.60min","ts":1668514774860}]
+2022-11-15 20:19:36.942  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.kline.60min","ts":1668514746441,"tick":{"id":1668513600,"open":0.9271,"close":0.9263,"low":0.9253,"high":0.928,"amount":35381.9917,"vol":32764.81368014,"count":97}}]
+2022-11-15 20:19:36.943  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.kline.1day","ts":1668514774860}]
+2022-11-15 20:19:36.944  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.kline.1day","ts":1668514746441,"tick":{"id":1668441600,"open":0.9031,"close":0.9263,"low":0.8885,"high":0.9301,"amount":489146.82146041695,"vol":445936.259827106,"count":4239}}]
+2022-11-15 20:19:36.945  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ltcusdt.depth.step1","ts":1668514774861,"tick":{"bids":[[58.4,94.298],[58.3,683.5677],[58.2,1151.6921],[58.1,762.5291],[58.0,449.5416],[57.9,0.3574],[57.8,301.4066],[57.7,1505.18],[57.6,397.852],[57.5,1.1357],[57.4,31.114],[57.3,215.7009],[57.2,19.1239],[57.1,82.531],[57.0,3.5698],[56.9,17.9042],[56.8,0.4236],[56.7,18.9165],[56.6,6.3426],[56.5,2.18]],"asks":[[58.5,153.5929],[58.6,553.5468],[58.7,1281.2701],[58.8,753.856],[58.9,525.3252],[59.0,17.4899],[59.1,38.9051],[59.2,299.3239],[59.3,3.5905],[59.4,5.7512],[59.5,89.1768],[59.6,162.6828],[59.7,36.9054],[59.8,4.4723],[59.9,3.7515],[60.0,82.9924],[60.1,90.2233],[60.2,3.1325],[60.3,80.8847],[60.4,76.7208]],"version":113616917226,"ts":1668514774573}}]
+2022-11-15 20:19:36.945  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.kline.1mon","ts":1668514774874}]
+2022-11-15 20:19:36.946  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.kline.1mon","ts":1668514746441,"tick":{"id":1667232000,"open":1.1173,"close":0.9263,"low":0.7887,"high":1.2185,"amount":5.337536283731756E7,"vol":5.450039676302962E7,"count":339098}}]
+2022-11-15 20:19:36.947  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.kline.1week","ts":1668514774874}]
+2022-11-15 20:19:36.948  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.kline.1week","ts":1668514746441,"tick":{"id":1668268800,"open":0.8995,"close":0.9263,"low":0.829,"high":0.9301,"amount":3071063.959227859,"vol":2731764.9759397036,"count":22300}}]
+2022-11-15 20:19:36.949  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.eosusdt.kline.1year","ts":1668514774874}]
+2022-11-15 20:19:36.949  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.eosusdt.kline.1year","ts":1668514746441,"tick":{"id":1640966400,"open":3.1256,"close":0.9263,"low":0.7887,"high":3.2743,"amount":1.397556479324399E9,"vol":2.4730861922990403E9,"count":10921817}}]
+2022-11-15 20:19:36.952  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.detail","ts":1668514774874}]
+2022-11-15 20:19:36.952  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.detail","ts":1668514774006,"tick":{"id":242531564578,"low":0.33884,"high":0.38901,"open":0.35009,"close":0.38141,"vol":7670725.414865535,"amount":2.0959166457419567E7,"version":242531564578,"count":155504}}]
+2022-11-15 20:19:36.954  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.depth.step1","ts":1668514774874}]
+2022-11-15 20:19:36.954  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.depth.step1","ts":1668514773893,"tick":{"bids":[[0.3814,1347.42],[0.3813,3200.0],[0.3812,645.41],[0.3811,20249.74],[0.381,32024.64],[0.3809,1670.02],[0.3808,2621.58],[0.3807,77929.04],[0.3806,2902.56],[0.3805,400.0],[0.3804,30933.6],[0.3803,6640.86],[0.3801,5919.85],[0.38,447.8],[0.3799,255944.09],[0.3798,5494.97],[0.3797,872.69],[0.3796,18905.8],[0.3795,2157.93],[0.3794,907.12]],"asks":[[0.3816,1429.27],[0.3817,11152.68],[0.3819,8.23],[0.382,12383.26],[0.3821,966.57],[0.3822,16905.59],[0.3823,109008.36],[0.3825,15133.68],[0.3826,352.0],[0.3827,3911.07],[0.3828,5761.09],[0.3829,247408.63],[0.383,11.14],[0.3831,28.6],[0.3832,120969.14],[0.3833,28.96],[0.3834,124.89],[0.3835,216.21],[0.3836,6.03],[0.3837,46.07]],"version":121273138157,"ts":1668514773756}}]
+2022-11-15 20:19:36.954  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.trade.detail","ts":1668514774874}]
+2022-11-15 20:19:36.954  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.trade.detail","ts":1668514774005,"tick":{"id":121273138161,"ts":1668514774004,"data":[{"id":121273138161671728449131451,"ts":1668514774004,"tradeId":101291831411,"amount":8.78,"price":0.38141,"direction":"sell"}]}}]
+2022-11-15 20:19:36.954  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.kline.1min","ts":1668514774874}]
+2022-11-15 20:19:36.954  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.kline.1min","ts":1668514774006,"tick":{"id":1668514740,"open":0.38116,"close":0.38141,"low":0.3811,"high":0.38151,"amount":482.95,"vol":184.1817644,"count":50}}]
+2022-11-15 20:19:36.957  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.kline.5min","ts":1668514774874}]
+2022-11-15 20:19:36.957  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.kline.5min","ts":1668514774006,"tick":{"id":1668514500,"open":0.381,"close":0.38141,"low":0.38049,"high":0.38151,"amount":6311.18,"vol":2404.0088551,"count":297}}]
+2022-11-15 20:19:36.959  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.kline.15min","ts":1668514774874}]
+2022-11-15 20:19:36.959  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.kline.15min","ts":1668514774006,"tick":{"id":1668514500,"open":0.381,"close":0.38141,"low":0.38049,"high":0.38151,"amount":6311.18,"vol":2404.0088551,"count":297}}]
+2022-11-15 20:19:36.960  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.kline.30min","ts":1668514774874}]
+2022-11-15 20:19:36.961  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.kline.30min","ts":1668514774006,"tick":{"id":1668513600,"open":0.37964,"close":0.38141,"low":0.37787,"high":0.3818,"amount":106056.74738666727,"vol":40282.06997534,"count":1836}}]
+2022-11-15 20:19:36.962  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.kline.60min","ts":1668514774874}]
+2022-11-15 20:19:36.962  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.kline.60min","ts":1668514774006,"tick":{"id":1668513600,"open":0.37964,"close":0.38141,"low":0.37787,"high":0.3818,"amount":106056.74738666727,"vol":40282.06997534,"count":1836}}]
+2022-11-15 20:19:36.964  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.kline.1day","ts":1668514774874}]
+2022-11-15 20:19:36.964  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.kline.1day","ts":1668514774006,"tick":{"id":1668441600,"open":0.34581,"close":0.38141,"low":0.33884,"high":0.38901,"amount":1.7601160402171142E7,"vol":6496745.044599355,"count":131281}}]
+2022-11-15 20:19:36.966  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.kline.1mon","ts":1668514774874}]
+2022-11-15 20:19:36.966  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.kline.1mon","ts":1668514774006,"tick":{"id":1667232000,"open":0.45165,"close":0.38141,"low":0.3148,"high":0.51,"amount":5.0681300633354414E8,"vol":2.063829734357693E8,"count":1902194}}]
+2022-11-15 20:19:36.968  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.kline.1week","ts":1668514774874}]
+2022-11-15 20:19:36.968  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.kline.1week","ts":1668514774006,"tick":{"id":1668268800,"open":0.36969,"close":0.38141,"low":0.31818,"high":0.38901,"amount":5.7457439909685865E7,"vol":2.013816790191309E7,"count":398412}}]
+2022-11-15 20:19:36.970  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.xrpusdt.kline.1year","ts":1668514774874}]
+2022-11-15 20:19:36.970  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.kline.1year","ts":1668514774006,"tick":{"id":1640966400,"open":0.84129,"close":0.38141,"low":0.28746,"high":0.93273,"amount":1.2158101285104515E10,"vol":6.644939495268176E9,"count":28993536}}]
+2022-11-15 20:19:36.973  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.detail","ts":1668514774874}]
+2022-11-15 20:19:36.973  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.detail","ts":1668514772167,"tick":{"id":244704633376,"low":0.321621,"high":0.341769,"open":0.332497,"close":0.339038,"vol":877676.7903715632,"amount":2641657.7838543607,"version":244704633376,"count":13391}}]
+2022-11-15 20:19:36.975  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.depth.step1","ts":1668514774874}]
+2022-11-15 20:19:36.975  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.depth.step1","ts":1668514774871,"tick":{"bids":[[0.33904,431.4],[0.33903,168.0293],[0.339,1801.3354],[0.33899,1556.0],[0.33898,48.0],[0.33897,512.89],[0.33896,112.0],[0.33895,1600.0],[0.33893,400.0],[0.3389,885.1959],[0.33884,6034.9984],[0.33872,12167.6945],[0.33849,18025.4679],[0.33848,300.0],[0.33846,502.78],[0.33843,300.0],[0.33836,28513.3374],[0.33831,6949.1565],[0.3383,901.0219],[0.33826,166.0]],"asks":[[0.33923,710.2472],[0.33924,848.4],[0.33927,56.0],[0.33928,168.0],[0.33929,48.0],[0.33931,2600.0],[0.33933,294.7057],[0.33935,259.4457764732924],[0.33938,200.0],[0.3394,6034.9984],[0.33944,1005.56],[0.33945,12167.6945],[0.33946,418.54],[0.33949,29.1548],[0.33966,30000.0],[0.33967,300.0],[0.33968,25427.3774],[0.3397,300.0],[0.33972,2948.5478],[0.33977,300.0]],"version":122360121635,"ts":1668514774415}}]
+2022-11-15 20:19:36.975  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.trade.detail","ts":1668514774874}]
+2022-11-15 20:19:36.975  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.trade.detail","ts":1668514772166,"tick":{"id":122360121308,"ts":1668514772164,"data":[{"id":122360121308671728449131044,"ts":1668514772164,"tradeId":100481499827,"amount":0.1,"price":0.339038,"direction":"sell"}]}}]
+2022-11-15 20:19:36.975  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.kline.1min","ts":1668514774874}]
+2022-11-15 20:19:36.975  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.kline.1min","ts":1668514772166,"tick":{"id":1668514740,"open":0.339011,"close":0.339038,"low":0.339011,"high":0.339221,"amount":6.195327235047358,"vol":2.1009368,"count":3}}]
+2022-11-15 20:19:36.977  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.kline.5min","ts":1668514774874}]
+2022-11-15 20:19:36.978  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.kline.5min","ts":1668514772166,"tick":{"id":1668514500,"open":0.33902,"close":0.339038,"low":0.339011,"high":0.339342,"amount":2413.415250761755,"vol":818.9362838469,"count":18}}]
+2022-11-15 20:19:36.980  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.kline.15min","ts":1668514774874}]
+2022-11-15 20:19:36.980  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.kline.15min","ts":1668514772166,"tick":{"id":1668514500,"open":0.33902,"close":0.339038,"low":0.339011,"high":0.339342,"amount":2413.415250761755,"vol":818.9362838469,"count":18}}]
+2022-11-15 20:19:36.981  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.kline.30min","ts":1668514774874}]
+2022-11-15 20:19:36.981  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.kline.30min","ts":1668514772166,"tick":{"id":1668513600,"open":0.338358,"close":0.339038,"low":0.337562,"high":0.339485,"amount":16330.231001405344,"vol":5529.4278350404,"count":98}}]
+2022-11-15 20:19:36.983  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.kline.60min","ts":1668514774874}]
+2022-11-15 20:19:36.983  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.kline.60min","ts":1668514772166,"tick":{"id":1668513600,"open":0.338358,"close":0.339038,"low":0.337562,"high":0.339485,"amount":16330.231001405344,"vol":5529.4278350404,"count":98}}]
+2022-11-15 20:19:36.984  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.kline.1day","ts":1668514774874}]
+2022-11-15 20:19:36.985  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.kline.1day","ts":1668514772166,"tick":{"id":1668441600,"open":0.330593,"close":0.339038,"low":0.321621,"high":0.341769,"amount":1813586.6955623862,"vol":601700.0097000039,"count":9682}}]
+2022-11-15 20:19:36.986  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.kline.1mon","ts":1668514774874}]
+2022-11-15 20:19:36.986  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.kline.1mon","ts":1668514772166,"tick":{"id":1667232000,"open":0.40507,"close":0.339038,"low":0.310102,"high":0.4376,"amount":2.040362510226676E8,"vol":7.72317525237072E7,"count":616856}}]
+2022-11-15 20:19:36.988  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.kline.1week","ts":1668514774874}]
+2022-11-15 20:19:36.988  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.kline.1week","ts":1668514772166,"tick":{"id":1668268800,"open":0.344794,"close":0.339038,"low":0.314285,"high":0.346468,"amount":9367464.162903037,"vol":3116299.2870446504,"count":45002}}]
+2022-11-15 20:19:36.990  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.xrpusdt.depth.step1","ts":1668514774893,"tick":{"bids":[[0.3814,1338.64],[0.3813,3200.0],[0.3812,645.41],[0.3811,20249.74],[0.381,32024.64],[0.3809,1670.02],[0.3808,2621.58],[0.3807,77929.04],[0.3806,2902.56],[0.3805,400.0],[0.3804,30933.6],[0.3803,6640.86],[0.3801,5919.85],[0.38,447.8],[0.3799,255944.09],[0.3798,5494.97],[0.3797,872.69],[0.3796,18905.8],[0.3795,2157.93],[0.3794,907.12]],"asks":[[0.3816,986.71],[0.3817,3457.74],[0.3819,8.23],[0.382,12383.26],[0.3821,966.57],[0.3822,16905.59],[0.3823,109008.36],[0.3825,15133.68],[0.3826,352.0],[0.3827,3911.07],[0.3828,5761.09],[0.3829,247408.63],[0.383,11.14],[0.3831,28.6],[0.3832,120969.14],[0.3833,28.96],[0.3834,124.89],[0.3835,216.21],[0.3836,6.03],[0.3837,46.07]],"version":121273138171,"ts":1668514774248}}]
+2022-11-15 20:19:36.990  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"id":"502dbded-bd64-4329-aca3-292af90bb17d","status":"ok","subbed":"market.adausdt.kline.1year","ts":1668514774915}]
+2022-11-15 20:19:36.990  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.adausdt.kline.1year","ts":1668514772166,"tick":{"id":1640966400,"open":1.354722,"close":0.339038,"low":0.310102,"high":1.637735,"amount":4.964418811946416E9,"vol":3.795133655364396E9,"count":20086810}}]
+2022-11-15 20:19:36.993  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.huobi.service.HuobiServiceImpl  : msg: [{"ch":"market.ethusdt.depth.step1","ts":1668514775213,"tick":{"bids":[[1264.1,0.9556],[1263.8,2.0023],[1263.5,34.3094],[1263.0,0.2513],[1262.9,73.791],[1262.8,0.2],[1262.6,2.02],[1262.5,12.4],[1262.3,1.7],[1262.2,100.5776],[1262.0,10.0],[1261.9,18.7507],[1261.7,0.004],[1261.6,0.1816],[1261.5,10.0],[1261.3,2.1216],[1261.2,180.6796],[1261.1,15.95],[1261.0,2.0],[1260.9,10.0]],"asks":[[1264.4,0.649],[1264.6,2.6104],[1264.8,0.8],[1265.0,34.3218],[1265.1,2.5],[1265.3,5.0],[1265.4,0.0354],[1265.5,74.4654],[1265.6,2.0],[1265.7,8.0],[1265.9,6.9374],[1266.0,12.8993],[1266.4,0.025],[1266.5,5.0],[1266.8,110.5776],[1267.0,5.0],[1267.3,30.8265],[1267.5,198.4708],[1267.8,0.0349],[1268.0,5.001]],"version":153310338365,"ts":1668514775013}}]
+2022-11-15 20:19:36.993 ERROR 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 火币客户端断开连接: [false]
+2022-11-15 20:19:36.994  INFO 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiClient         : 火币客户端开始重连,当前时间:[2022-11-15 08:19:36]
+2022-11-15 20:19:41.473  INFO 21188 --- [nioEventLoopGroup-4-1] c.s.zeus.core.AbstractWebsocketClient    : 行情基类启动成功,时间:[2022-11-15 08:19:41]
+2022-11-15 20:19:45.241  INFO 21188 --- [nioEventLoopGroup-4-1] com.study.zeus.huobi.HuobiHandler        : 重连结果: [true]
+2022-11-15 20:20:44.054  INFO 21188 --- [nioEventLoopGroup-8-1] com.study.zeus.huobi.HuobiHandler        : 接收到火币关闭数据包
+2022-11-15 20:20:44.055 ERROR 21188 --- [nioEventLoopGroup-8-1] com.study.zeus.huobi.HuobiHandler        : 火币客户端断开连接: [false]
+2022-11-15 20:20:44.055  INFO 21188 --- [nioEventLoopGroup-8-1] com.study.zeus.huobi.HuobiClient         : 火币客户端开始重连,当前时间:[2022-11-15 08:20:44]
+2022-11-15 20:20:44.117  INFO 21188 --- [nioEventLoopGroup-8-1] c.s.zeus.core.AbstractWebsocketClient    : 行情基类启动成功,时间:[2022-11-15 08:20:44]
+2022-11-15 20:20:44.320  INFO 21188 --- [nioEventLoopGroup-8-1] com.study.zeus.huobi.HuobiHandler        : 重连结果: [true]
+2022-11-15 20:21:48.489  INFO 21188 --- [http-nio-8086-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-15 20:21:48.489  INFO 21188 --- [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-15 20:21:48.490  INFO 21188 --- [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
