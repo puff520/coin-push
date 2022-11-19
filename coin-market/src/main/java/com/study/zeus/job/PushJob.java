@@ -2,13 +2,10 @@ package com.study.zeus.job;
 
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.study.zeus.entity.DayMarket;
 import com.study.zeus.entity.Kline;
-import com.study.zeus.entity.MarketDepth;
 import com.study.zeus.entity.MarketDetail;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
+import com.study.zeus.utils.SocketUtil;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -17,62 +14,62 @@ import org.springframework.stereotype.Component;
 @EnableScheduling
 public class PushJob {
 
-    @Autowired
-    private SimpMessagingTemplate simpMessagingTemplate;
 
-
-    /**
-     * 收到变更记录 推送行情到客户端
-     *
-     * @param dayMarket
-     */
     public void pushDayMarket(DayMarket dayMarket) {
-        simpMessagingTemplate.convertAndSend("/topic/dayMarket", JSON.toJSONString(dayMarket));
+        SocketUtil.connectMap.forEach((key, client) -> {
+            if (client != null) {
+                client.sendEvent("daymarket", JSON.toJSONString(dayMarket));
+            }
+        });
     }
 
-
-    /**
-     * 收到变更记录 推送行情到客户端
-     *
-     * @param kline
-     */
     public void pushKline(Kline kline) {
-        simpMessagingTemplate.convertAndSend("/topic/kline", JSON.toJSONString(kline));
+        SocketUtil.connectMap.forEach((key, client) -> {
+            if (client != null) {
+                client.sendEvent("kline", JSON.toJSONString(kline));
+            }
+        });
     }
 
 
-    /**
-     * 收到变更记录 推送行情到客户端
-     */
     @Scheduled(cron = "0/1 * * * * ?")
     public void pushDayDepth() {
-        simpMessagingTemplate.convertAndSend("/topic/marketDepth", JSON.toJSONString(MarketDetail.getDayMarket()));
+        SocketUtil.connectMap.forEach((key, client) -> {
+            if (client != null) {
+                client.sendEvent("market_depth", JSON.toJSONString(MarketDetail.getMarket_depth()));
+            }
+        });
     }
 
 
-    /**
-     * 收到变更记录 推送行情到客户端
-     */
     @Scheduled(cron = "0/1 * * * * ?")
     public void pushTradeDetail() {
-        simpMessagingTemplate.convertAndSend("/topic/tradeDetail", JSON.toJSONString(MarketDetail.getTradeDetail()));
+        SocketUtil.connectMap.forEach((key, client) -> {
+            if (client != null) {
+                client.sendEvent("market_detail", JSON.toJSONString(MarketDetail.getTradeDetail()));
+            }
+        });
     }
 
 
-    @Scheduled(cron = "0/1 * * * * ?")
+    @Scheduled(cron = "0/20 * * * * ?")
     public void test4() {
-        simpMessagingTemplate.convertAndSend("/topic/leverTrade", JSON.toJSONString(MarketDetail.getLever_trade()));
+        SocketUtil.connectMap.forEach((key, client) -> {
+            if (client != null) {
+                client.sendEvent("lever_trade", JSON.toJSONString(MarketDetail.getLever_trade()));
+            }
+        });
     }
 
 
-    @Scheduled(cron = "0/1 * * * * ?")
+    @Scheduled(cron = "0/20 * * * * ?")
     public void test5() {
-        simpMessagingTemplate.convertAndSend("/topic/closedMicroOrder", JSON.toJSONString(MarketDetail.getClosed_microorder()));
+        SocketUtil.connectMap.forEach((key, client) -> {
+            if (client != null) {
+                client.sendEvent("closed_microorder", JSON.toJSONString(MarketDetail.getClosed_microorder()));
+            }
+        });
     }
 
 
-//    @Scheduled(cron = "0/5 * * * * ?")
-//    public void test2() {
-//        simpMessagingTemplate.convertAndSendToUser("10086", "/message", "点对点消息");
-//    }
 }

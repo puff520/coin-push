@@ -1,35 +1,19 @@
 package com.study.zeus.component;
 
 import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.date.DatePattern;
-import cn.hutool.core.date.DateTime;
-import cn.hutool.core.date.format.DateParser;
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import com.huobi.client.MarketClient;
-import com.huobi.client.req.market.MarketDetailRequest;
-import com.huobi.client.req.market.SubCandlestickRequest;
-import com.huobi.client.req.market.SubMarketDepthRequest;
-import com.huobi.client.req.market.SubMarketDetailRequest;
 import com.huobi.constant.HuobiOptions;
-import com.huobi.constant.enums.CandlestickIntervalEnum;
-import com.huobi.constant.enums.DepthStepEnum;
-import com.huobi.wss.event.MarketDetailSubResponse;
-import com.huobi.wss.event.MarketKLineSubResponse;
-import com.huobi.wss.event.MarketTradeDetailSubResponse;
+import com.huobi.service.huobi.HuobiMarketService;
 import com.huobi.wss.handle.WssMarketHandle;
 import com.study.zeus.entity.*;
-//import com.study.zeus.job.PushJob;
 import com.study.zeus.job.PushJob;
-import com.study.zeus.utils.DateUtil;
 import com.study.zeus.utils.DateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -47,24 +31,18 @@ import java.util.stream.Collectors;
 @Component
 public class HuobiMarketSub {
 
-    private ExecutorService executor = new ThreadPoolExecutor(30,
-            100,
-            0L,
-            TimeUnit.MILLISECONDS,
-            new LinkedBlockingQueue<>(1024),
-            new ThreadPoolExecutor.AbortPolicy());
+    private ExecutorService executor = new ThreadPoolExecutor(30, 100, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(1024), new ThreadPoolExecutor.AbortPolicy());
 
     @Autowired
     private RedisTemplate redisTemplate;
 
 
     MarketClient marketClient = MarketClient.create(new HuobiOptions());
-    String symbol = "btcusdt";
 
     @Autowired
     private PushJob pushJob;
 
-    private String URL = "wss://api.hbdm.com/swap-ws";//合约站行情请求以及订阅地址
+    private String URL = "wss://api.huobi.pro/ws";//现货行情地址
     WssMarketHandle wssMarketDetailHandle = new WssMarketHandle(URL);
     WssMarketHandle wssMarketKlineHandle = new WssMarketHandle(URL);
     WssMarketHandle wssMarketDepthHandle = new WssMarketHandle(URL);
@@ -87,14 +65,14 @@ public class HuobiMarketSub {
                 List<Currency> currencyList = getCacheList();
                 List<String> channels = Lists.newArrayList();
                 for (Currency currency : currencyList) {
-                    channels.add("market." + currency.getName() + "-USD.detail");
+                    channels.add("market." + currency.getName().toLowerCase() + "usdt.detail");
                 }
                 wssMarketDetailHandle.sub(channels, response -> {
                     JSONObject jsonObject = JSONObject.parseObject(response);
                     String ch = jsonObject.getString("ch");
                     int pri = ch.indexOf("market.") + 7;
-                    int fix = ch.indexOf("-USD.detail");
-                    String symbol = ch.substring(pri, fix);
+                    int fix = ch.indexOf("usdt.detail");
+                    String symbol = ch.substring(pri, fix).toUpperCase();
 
                     JSONObject tickObject = jsonObject.getJSONObject("tick");
                     BigDecimal amount = tickObject.getBigDecimal("amount");
@@ -134,14 +112,16 @@ public class HuobiMarketSub {
                 List<Currency> currencyList = getCacheList();
                 List<String> channels = Lists.newArrayList();
                 for (Currency currency : currencyList) {
-                    channels.add("market." + currency.getName() + "-USD.kline.1min");
+                    channels.add("market." + currency.getName() + "usdt.kline.1min");
+                    String topic = HuobiMarketService.WEBSOCKET_MARKET_DETAIL_TOPIC
+                            .replace("$symbol", symbol);
                 }
                 wssMarketKlineHandle.sub(channels, response -> {
                     JSONObject jsonObject = JSONObject.parseObject(response);
                     String ch = jsonObject.getString("ch");
                     int pri = ch.indexOf("market.") + 7;
-                    int fix = ch.indexOf("-USD.kline");
-                    String symbol = ch.substring(pri, fix);
+                    int fix = ch.indexOf("usdt.kline.");
+                    String symbol = ch.substring(pri, fix).toUpperCase();
 
                     JSONObject tickObject = jsonObject.getJSONObject("tick");
                     Long time = jsonObject.getLong("ts");
@@ -179,14 +159,14 @@ public class HuobiMarketSub {
                 List<Currency> currencyList = getCacheList();
                 List<String> channels = Lists.newArrayList();
                 for (Currency currency : currencyList) {
-                    channels.add("market." + currency.getName() + "-USD.depth.step1");
+                    channels.add("market." + currency.getName() + "usdt.depth.step1");
                 }
                 wssMarketDepthHandle.sub(channels, response -> {
                     JSONObject jsonObject = JSONObject.parseObject(response);
                     String ch = jsonObject.getString("ch");
                     int pri = ch.indexOf("market.") + 7;
-                    int fix = ch.indexOf("-USD.depth");
-                    String symbol = ch.substring(pri, fix);
+                    int fix = ch.indexOf("usdt.depth.");
+                    String symbol = ch.substring(pri, fix).toUpperCase();
                     JSONObject tickObject = jsonObject.getJSONObject("tick");
                     Object bids = tickObject.get("bids");
                     Object asks = tickObject.get("asks");
@@ -211,19 +191,19 @@ public class HuobiMarketSub {
                 List<Currency> currencyList = getCacheList();
                 List<String> channels = Lists.newArrayList();
                 for (Currency currency : currencyList) {
-                    channels.add("market." + currency.getName() + "-USD.trade.detail");
+                    channels.add("market." + currency.getName() + "usdt.trade.detail");
                 }
                 wssMarketTradeHandle.sub(channels, response -> {
                     JSONObject jsonObject = JSONObject.parseObject(response);
                     String ch = jsonObject.getString("ch");
                     int pri = ch.indexOf("market.") + 7;
-                    int fix = ch.indexOf("-USD.trade.");
-                    String symbol = ch.substring(pri, fix);
+                    int fix = ch.indexOf("usdt.trade.");
+                    String symbol = ch.substring(pri, fix).toUpperCase();
                     JSONObject tickObject = jsonObject.getJSONObject("tick");
                     TradeDetail tradeDetail = new TradeDetail();
                     JSONArray jsonArray = tickObject.getJSONArray("data");
                     for (Object data : jsonArray) {
-                       JSONObject object = (JSONObject) data;
+                        JSONObject object = (JSONObject) data;
                         object.put("time", DateUtils.timeToString(new Date()));
                     }
                     tradeDetail.setData(jsonArray);
@@ -245,8 +225,6 @@ public class HuobiMarketSub {
         }
         return new LinkedList<>();
     }
-
-
 
 
 }

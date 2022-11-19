@@ -6,3 +6,7 @@
 
 ${application.version} 火币实时行情系统 v1.0.0
 
+
+market.$symbol.depth.$type
+
+market.$contract_code.depth.$type

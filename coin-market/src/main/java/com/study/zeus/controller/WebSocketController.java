@@ -1,65 +1,39 @@
 package com.study.zeus.controller;
 
-import com.study.zeus.entity.Message;
-import com.study.zeus.result.Result;
+import com.study.zeus.entity.MyMessage;
+import com.study.zeus.utils.SocketUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.handler.annotation.DestinationVariable;
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.messaging.simp.annotation.SubscribeMapping;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 @RestController
 public class WebSocketController {
+    public final static String SEND_TYPE_ALL = "ALL";
+    public final static String SEND_TYPE_ALONE = "ALONE";
     @Autowired
-    private SimpMessagingTemplate simpMessagingTemplate;
+    SocketUtil socketUtil;
 
-    @SubscribeMapping({"/topic/hello"})
-    public Result subscribeTime() {
-        return Result.success("hello!");
-    }
+    @PostMapping("/testSendMsg")
+    public String testSendMsg(@RequestBody MyMessage myMessage) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("msg", myMessage.getContent());
 
-    @SubscribeMapping({"/topic/info/{classId}"})
-    public Result subscribeState(@DestinationVariable String classId) {
-        return Result.success("班级消息推送订阅成功!" + classId);
-    }
+        //群发
+        if (SEND_TYPE_ALL.equals(myMessage.getType())) {
+            socketUtil.sendToAll(map, myMessage.getChannel());
+            return "success";
+        }
+        //指定单人
+        if (SEND_TYPE_ALONE.equals(myMessage.getType())) {
+            socketUtil.sendToOne(myMessage.getTo(), map, myMessage.getChannel());
+            return "success";
+        }
 
-    @SubscribeMapping({"/user/{name}/hello"})
-    public Result subscribeParam(@DestinationVariable String name) {
-        return Result.success("你好!" + name);
-    }
-
-    @MessageMapping("/hello")
-    @SendTo("/topic/hello")
-    public Result hello(String requestMessage) {
-        System.out.println("接收消息：" + requestMessage);
-        return Result.success("服务端接收到你发的：" + requestMessage);
-    }
-
-    @GetMapping("/sendMsgToUser")
-    public String sendMsgByUser(String name, String msg) {
-        // /user/{name}/hello
-        simpMessagingTemplate.convertAndSendToUser(name, "/hello", msg);
-        return "success";
-    }
-
-    @GetMapping("/sendMsgToAll")
-    public String sendMsgByAll(int classId, String msg) {
-        // /topic/info/{classId}
-        simpMessagingTemplate.convertAndSend("/topic/info/" + classId, msg);
-        return "success";
-    }
-
-    /**
-     * 广播
-     *
-     * @param msg
-     */
-    @ResponseBody
-    @RequestMapping("/pushToAll")
-    public void subscribe(@RequestBody Message msg) {
-        simpMessagingTemplate.convertAndSend("/topic/all", msg.getContent());
+        return "fail";
     }
 }
